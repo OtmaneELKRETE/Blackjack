@@ -12,15 +12,15 @@ class Blackjack:
         print("Bienvenue dans le jeu de Blackjack !")
         self.carte.GenerationDeck()    
         self.carte.melange()
-        mainCarte = self.carte.distributionCarte(self.carte.deck)
+        mainjoueur = self.carte.distributionCarte(self.carte.deck)
         mainBanque = self.carte.distributionCarte(self.carte.deck)
-        valeurJeu = self.carte.valeurMain(mainCarte)
+        valeurJeu = self.carte.valeurMain(mainjoueur)
         valeurBanque = self.carte.valeurMain(mainBanque)
-        print("Votre main :", mainCarte, "Valeur :", valeurJeu)
+        print("Votre main :", mainjoueur, "Valeur :", valeurJeu)
         print("Main de la banque :", mainBanque, "Valeur :", valeurBanque)
 
-        self.joueur.GestionJoueuréponse(mainCarte,self.carte.deck)
-        self.banque.GestionBanqueRéponse(mainBanque,self.carte.deck)
+        self.joueur.GestionJoueuréponse(mainjoueur, self.carte)
+        self.banque.GestionBanqueRéponse(mainBanque, self.carte)
 
 
 Blackjack().main()

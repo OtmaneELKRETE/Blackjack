@@ -7,5 +7,8 @@ class Banque:
         choix=False
         while choix==False:
             if len(banque)<17:
-                banque.append(deck.pop())
-                print("Main de la banque :", banque)
+                banque.append(deck.deck.pop())
+                valeur = deck.valeurMain(banque)
+                print("Main de la banque :", banque, "Valeur :", valeur)
+            else:
+                choix=True
