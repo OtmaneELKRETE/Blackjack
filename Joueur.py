@@ -19,4 +19,16 @@ class Joueur:
             elif reponse == "non":
                 choix=True
 
-        return valeurJeu
+        return valeurJeu, main
+
+    def gestionComportementEnFonctionMainJoueur(self, valeurJeu, mainjoueur):
+            res = False
+    
+            if valeurJeu > 21:
+                print("Vous avez dépassé 21. Vous avez perdu !")
+            elif valeurJeu == 21 and len(mainjoueur) == 2:
+                print("Blackjack ! Vous avez gagné !")
+            else:
+                res = True
+    
+            return res

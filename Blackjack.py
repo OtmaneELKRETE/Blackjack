@@ -9,7 +9,7 @@ class Blackjack:
         self.carte = Carte.Carte()
         
     def main(self):
-        print("Bienvenue dans le jeu de Blackjack !" + self.joueur.nom + " vous avez " + str(self.joueur.argent) + "€")
+        print("Bienvenue dans le jeu de Blackjack " + self.joueur.nom + " ! vous avez " + str(self.joueur.argent) + "€")
         self.carte.GenerationDeck()    
         self.carte.melange()
         mainjoueur = self.carte.distributionCarte(self.carte.deck)
@@ -19,12 +19,10 @@ class Blackjack:
         print("Votre main :", mainjoueur, "Valeur :", valeurJeu)
         print("Main de la banque :", mainBanque, "Valeur :", valeurBanque)
 
-        valeurJeu = self.joueur.GestionJoueuréponse(mainjoueur, self.carte, valeurJeu)
+        valeurJeu,mainjoueur = self.joueur.GestionJoueuréponse(mainjoueur, self.carte, valeurJeu)
 
-        if valeurJeu > 21:
-            print("Vous avez dépassé 21. Vous avez perdu !")
-        else:
-            self.banque.GestionBanqueRéponse(mainBanque, self.carte, valeurBanque)
-
+        if self.joueur.gestionComportementEnFonctionMainJoueur(valeurJeu, mainjoueur):
+            valeurBanque,mainBanque = self.banque.GestionBanqueRéponse(mainBanque, self.carte, valeurBanque)
+            self.banque.gestionComportementEnFonctionMainBanque(valeurBanque, mainBanque)
 
 Blackjack().main()
