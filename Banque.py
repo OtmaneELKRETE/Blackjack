@@ -3,12 +3,12 @@ class Banque:
         self.nom = nom
         self.solde = solde
 
-    def GestionBanqueRéponse(self, banque, deck):
+    def GestionBanqueRéponse(self, banque, deck, valeurjeu):
         choix=False
         while choix==False:
-            if len(banque)<17:
+            if valeurjeu<17:
                 banque.append(deck.deck.pop())
-                valeur = deck.valeurMain(banque)
-                print("Main de la banque :", banque, "Valeur :", valeur)
+                valeurjeu = deck.valeurMain(banque)
+                print("Main de la banque :", banque, "Valeur :", valeurjeu)
             else:
                 choix=True
