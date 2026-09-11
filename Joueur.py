@@ -10,11 +10,12 @@ class Joueur:
 
     def GestionJoueuréponse(self, main, deck, valeurJeu):
         choix=False
+        
         while choix==False and valeurJeu<21:
             reponse = input("Voulez-vous tirer une carte ? (oui/non) : ")
             if reponse == "oui":
                 main.append(deck.deck.pop())
-                valeurJeu = deck.valeurMain(main)
+                valeurJeu = deck.valeurMainJoueur(main)
                 print("Votre main :", main, "Valeur :", valeurJeu)
             elif reponse == "non":
                 choix=True

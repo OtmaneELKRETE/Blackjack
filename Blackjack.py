@@ -14,8 +14,8 @@ class Blackjack:
         self.carte.melange()
         mainjoueur = self.carte.distributionCarte(self.carte.deck)
         mainBanque = self.carte.distributionCarte(self.carte.deck)
-        valeurJeu = self.carte.valeurMain(mainjoueur)
-        valeurBanque = self.carte.valeurMain(mainBanque)
+        valeurJeu = self.carte.valeurMainJoueur(mainjoueur)
+        valeurBanque = self.carte.valeurMainBanque(mainBanque)
         print("Votre main :", mainjoueur, "Valeur :", valeurJeu)
         print("Main de la banque :", mainBanque, "Valeur :", valeurBanque)
 

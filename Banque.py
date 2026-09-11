@@ -8,7 +8,7 @@ class Banque:
         while choix==False:
             if valeurjeu<17:
                 banque.append(deck.deck.pop())
-                valeurjeu = deck.valeurMain(banque)
+                valeurjeu = deck.valeurMainBanque(banque)
                 print("Main de la banque :", banque, "Valeur :", valeurjeu)
             else:
                 choix=True
